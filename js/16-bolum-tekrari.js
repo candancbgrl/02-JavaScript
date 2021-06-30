@@ -69,3 +69,4 @@ if(not <=100 && not >=0){
 
 
 info.innerHTML = `${tut}`
+

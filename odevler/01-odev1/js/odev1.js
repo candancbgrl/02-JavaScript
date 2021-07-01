@@ -1,7 +1,7 @@
 let userName = prompt("Adınızı giriniz")
 let info = document.querySelector("#info")
 
-//info.innerHTML = `<h1>Merhaba <font face="tahoma" size="10"  style="color:white" > ${userName}!</font></<h1> Hoşgeldin!`
+
 info.innerHTML = `${userName}`
 
 //Time Settings

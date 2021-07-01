@@ -1,1 +1,12 @@
-hebele
+#IDE - VSCODE
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+#img
+*.jpg
+*.png
+#dizin old. belirlemek icin
+

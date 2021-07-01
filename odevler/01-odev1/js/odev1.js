@@ -1,17 +1,48 @@
-/*let userName = prompt("Adınızı giriniz")
+let userName = prompt("Adınızı giriniz")
 let info = document.querySelector("#info")
 
-info.innerHTML = `Merhaba ${userName}! Hoşgeldin!`*/
+info.innerHTML = `<h1>Merhaba <font face="tahoma" size="10"  style="color:white" > ${userName}!</font></<h1> Hoşgeldin!`
 
+//Time Settings
 let tarih = new Date();
 let saat= tarih.getHours();
 let dakika = tarih.getMinutes();
 let saniye = tarih.getSeconds();
 var i = 0;
-function kronometre(){
-    let time = document.querySelector("#time")
-    
 
+
+//Day Settings
+let day = document.querySelector("#day")
+let dayName;
+
+let time = document.querySelector("#time")
+
+switch(tarih.getDay()){
+    case 1 :
+        dayName = "Pazartesi";
+        break;
+    case 2 :
+        dayName = "Salı";
+        break;
+    case 3 :
+        dayName = "Çarşamba";
+        break;
+    case 4 :
+        dayName = "Perşembe";
+        break;
+    case 5 :
+        dayName = "Cuma";
+        break;
+    case 6:
+        dayName = "Cumartesi";
+        break;
+    case 7:
+        dayName = "Pazar";
+        break;
+    
+}
+//function
+function timer(){
     let strSaat;
     let strSaniye;
     let strDakika;
@@ -50,35 +81,17 @@ function kronometre(){
         saniye = 0;
         temp = saniye.toString();
         strSaniye = zero.concat(temp);
-
+    }else if(dakika < 10){
+        temp2 = dakika.toString();
+        strDakika = zero.concat(temp2);
+    }else{
+        strDakika = dakika.toString();
     }
 
-    time.innerHTML = `${strSaat}:${strDakika}:${strSaniye} `
-
-
-
-
-
-    /*tarih.getSeconds()+i;
-    i++;
-    let temp ;
-    let saniye ;
-    let zero = "0";
-    if(saniye < 10){
-        temp = tarih.getSeconds().toString();
-        saniye = zero.concat(temp);
-    }else if(saniye > 60){
-        tarih.getMinutes() +1;
-        saniye = 0;
-    }*/
-
-
-
-   
-
-    /*console.log(tarih.getHours())
-    console.log(tarih.getMinutes())
-    console.log(tarih.getSeconds())
-    console.log(tarih.getSeconds()+1)*/
+    time.innerHTML = `${strSaat}:${strDakika}:${strSaniye} ${dayName}`
 }
-setInterval("kronometre()",1000)
+setInterval("timer()",1000)
+
+
+
+
